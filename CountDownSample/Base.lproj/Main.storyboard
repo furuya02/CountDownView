@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CountDownSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OTV-Fh-APV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-rE-t3V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dy-OM-Lhy">
+                                        <rect key="frame" x="138" y="560" width="99" height="30"/>
+                                        <state key="normal" title="START"/>
+                                        <connections>
+                                            <action selector="tapStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pxp-on-zlD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4N-00-MOS">
+                                        <rect key="frame" x="138" y="607" width="99" height="30"/>
+                                        <state key="normal" title="STOP"/>
+                                        <connections>
+                                            <action selector="tapStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YF1-bo-xiO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6Dy-OM-Lhy" firstAttribute="centerX" secondItem="2fa-rE-t3V" secondAttribute="centerX" id="5X4-y1-9lY"/>
+                                    <constraint firstItem="f4N-00-MOS" firstAttribute="centerX" secondItem="2fa-rE-t3V" secondAttribute="centerX" id="9U9-OI-Swt"/>
+                                    <constraint firstItem="f4N-00-MOS" firstAttribute="top" secondItem="6Dy-OM-Lhy" secondAttribute="bottom" constant="17" id="ZGv-CO-ngo"/>
+                                    <constraint firstAttribute="bottom" secondItem="f4N-00-MOS" secondAttribute="bottom" constant="30" id="vQH-mC-ccU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2fa-rE-t3V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7og-rX-Mdn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OTV-Fh-APV" secondAttribute="bottom" id="EKT-Mp-Dcz"/>
+                            <constraint firstItem="OTV-Fh-APV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Hmv-RP-xJL"/>
+                            <constraint firstItem="OTV-Fh-APV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L5X-sz-GPz"/>
+                            <constraint firstAttribute="trailing" secondItem="OTV-Fh-APV" secondAttribute="trailing" id="OiV-3V-b0Z"/>
+                            <constraint firstItem="2fa-rE-t3V" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="a1s-It-CXu"/>
+                            <constraint firstAttribute="trailing" secondItem="2fa-rE-t3V" secondAttribute="trailing" id="c9d-HI-Zj7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2fa-rE-t3V" secondAttribute="bottom" id="djT-NA-4Dd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="screenView" destination="2fa-rE-t3V" id="WE4-OR-8hM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backImage.jpg" width="1129" height="1977"/>
+    </resources>
+</document>
