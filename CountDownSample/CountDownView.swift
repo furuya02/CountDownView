@@ -35,21 +35,21 @@ class CountDownView: UIView, CAAnimationDelegate {
         
         shapeLayer.isHidden = true
         label.isHidden = true
-        shapeLayer.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        shapeLayer.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.lineWidth = lineWidth
         
-        let center = CGPoint(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0)
-        let radius = self.bounds.size.width / 2.0 - lineWidth / 2
+        let center = CGPoint(x: bounds.size.width / 2.0, y: bounds.size.height / 2.0)
+        let radius = bounds.size.width / 2.0 - lineWidth / 2
         let startAngle = CGFloat(-M_PI_2)
         let endAngle = startAngle + 2.0 * CGFloat(M_PI)
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         shapeLayer.path = path.cgPath
-        layer.addSublayer(self.shapeLayer)
+        layer.addSublayer(shapeLayer)
         
-        label.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        label.center = CGPoint(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0)
+        label.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        label.center = CGPoint(x: bounds.size.width / 2.0, y: bounds.size.height / 2.0)
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.boldSystemFont(ofSize: 100)
         addSubview(label)
@@ -77,7 +77,7 @@ class CountDownView: UIView, CAAnimationDelegate {
         if flag {
             if 1 < max {
                 start(max: max - 1)
-                self.delegate?.didCount(count: max)
+                delegate?.didCount(count: max)
                 return
             }
         }
