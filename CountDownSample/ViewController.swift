@@ -17,27 +17,27 @@ class ViewController: UIViewController, CountDownDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.countDownView.delegate = self
-        self.countDownView.center = CGPoint(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.height / 2.0)
-        self.view.addSubview(countDownView)
+        countDownView.delegate = self
+        countDownView.center = CGPoint(x: view.bounds.size.width / 2.0, y: view.bounds.height / 2.0)
+        view.addSubview(countDownView)
     }
 
     func didCount(count: Int) {
         print("didiCount(\(count))")
-        self.screenView.alpha -= 0.1
+        screenView.alpha -= 0.1
     }
     
     func didFinish() {
         print("didFinish")
-        self.screenView.alpha = 0
+        screenView.alpha = 0
     }
     
     @IBAction func tapStartButton(_ sender: Any) {
-        self.countDownView.start(max: 5)
+        countDownView.start(max: 5)
     }
     
     @IBAction func tapStopButton(_ sender: Any) {
-        self.countDownView.stop()
+        countDownView.stop()
     }
 }
 
