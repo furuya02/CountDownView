@@ -28,8 +28,8 @@ class CountDownView: UIView, CAAnimationDelegate {
         let lineWidth:CGFloat = 10.0
         let lineColor = UIColor.black
         
-        self.shapeLayer.isHidden = true
-        self.label.isHidden = true
+        shapeLayer.isHidden = true
+        label.isHidden = true
         shapeLayer.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeColor = lineColor.cgColor
@@ -40,14 +40,14 @@ class CountDownView: UIView, CAAnimationDelegate {
         let startAngle = CGFloat(-M_PI_2)
         let endAngle = startAngle + 2.0 * CGFloat(M_PI)
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        self.shapeLayer.path = path.cgPath
-        self.layer.addSublayer(self.shapeLayer)
+        shapeLayer.path = path.cgPath
+        layer.addSublayer(self.shapeLayer)
         
         label.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         label.center = CGPoint(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0)
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.boldSystemFont(ofSize: 100)
-        self.addSubview(label)
+        addSubview(label)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,9 +56,9 @@ class CountDownView: UIView, CAAnimationDelegate {
     
     func start(max:Int){
         self.max = max
-        self.shapeLayer.isHidden = false
-        self.label.isHidden = false
-        self.label.text = "\(max)"
+        shapeLayer.isHidden = false
+        label.isHidden = false
+        label.text = "\(max)"
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = 0.8
         animation.fromValue = 0.0
@@ -68,7 +68,7 @@ class CountDownView: UIView, CAAnimationDelegate {
     }
     
     func stop(){
-        self.shapeLayer.isHidden = true
+        shapeLayer.isHidden = true
         shapeLayer.removeAnimation(forKey: "circleAnim")
     }
     
@@ -80,9 +80,9 @@ class CountDownView: UIView, CAAnimationDelegate {
                 return
             }
         }
-        self.delegate?.didFinish()
-        self.shapeLayer.isHidden = true
-        self.label.isHidden = true
+        delegate?.didFinish()
+        shapeLayer.isHidden = true
+        label.isHidden = true
     }
 }
 
