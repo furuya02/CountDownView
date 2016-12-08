@@ -19,12 +19,17 @@ class CountDownView: UIView, CAAnimationDelegate {
 
     var shapeLayer = CAShapeLayer()
     var label = UILabel()
-
     var max = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
         let lineWidth:CGFloat = 10.0
         let lineColor = UIColor.black
         
@@ -48,10 +53,6 @@ class CountDownView: UIView, CAAnimationDelegate {
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.boldSystemFont(ofSize: 100)
         addSubview(label)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func start(max:Int){
